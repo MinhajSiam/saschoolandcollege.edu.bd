@@ -392,3 +392,101 @@ footer {
     border-radius: 4px;
     font-size: 14px;
 }
+
+/* --- ভর্তি ও রেজাল্ট পেজ --- */
+.info-box {
+    background: #f9f9f9;
+    padding: 20px;
+    border-left: 5px solid #006400;
+    margin-bottom: 20px;
+}
+
+/* রেজাল্ট সার্চ বক্স */
+.result-search {
+    text-align: center;
+    background: #e9ecef;
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.result-search input {
+    padding: 10px;
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-search {
+    padding: 10px 20px;
+    background: #006400;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* --- গ্যালারি পেজ --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    display: block;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1);
+    /* জুম এফেক্ট */
+}
+
+/* --- যোগাযোগ ফর্ম --- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background: #e74c3c;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* মোবাইল রেসপন্সিভ */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .result-search input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
