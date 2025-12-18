@@ -1,0 +1,394 @@
+/* বেসিক রিসেট */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* হেডার ডিজাইন */
+.top-header {
+    background: #fff;
+    padding: 15px 0;
+    border-bottom: 3px solid #006400;
+    /* গাঢ় সবুজ */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.school-name h1 {
+    font-size: 24px;
+    color: #006400;
+}
+
+.logo {
+    height: 60px;
+}
+
+/* নেভিগেশন বার */
+.navbar {
+    background: #2c3e50;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    background: #006400;
+}
+
+/* একটিভ মেনুর স্টাইল */
+.nav-links li a.active {
+    background-color: #006400;
+    /* বা আপনার পছন্দের কালার */
+    border-radius: 4px;
+}
+
+.menu-icon {
+    display: none;
+    /* মোবাইলে দেখাবে */
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* নোটিশ টিকার */
+.notice-ticker {
+    background: #ffeb3b;
+    padding: 8px 0;
+    display: flex;
+}
+
+.notice-label {
+    background: red;
+    color: white;
+    padding: 2px 8px;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* হিরো সেকশন */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-text h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+/* মেইন কন্টেন্ট লেআউট */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /* ২ ভাগ কন্টেন্ট, ১ ভাগ নোটিশ */
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.principal-msg,
+.notice-board {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.notice-board ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.notice-board li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.notice-board a {
+    text-decoration: none;
+    color: #333;
+}
+
+.notice-board a:hover {
+    color: red;
+}
+
+/* ফুটার */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* মোবাইল রেসপন্সিভ */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* ডিফল্টভাবে লুকানো */
+        flex-direction: column;
+        background: #2c3e50;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        text-align: right;
+    }
+
+    .main-content {
+        grid-template-columns: 1fr;
+        /* নিচে নিচে দেখাবে */
+    }
+
+    .school-name h1 {
+        font-size: 18px;
+    }
+}
+
+/* --- নতুন সেকশন স্টাইল --- */
+
+.section-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 30px;
+    color: #2c3e50;
+    position: relative;
+}
+
+/* টাইটেলের নিচে দাগ দেওয়ার জন্য */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #006400;
+    margin: 10px auto;
+}
+
+/* সার্ভিস কার্ড গ্রিড */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    /* হোভার করলে উপরে উঠবে */
+}
+
+.service-card i {
+    font-size: 40px;
+    color: #006400;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.service-card a {
+    color: #e74c3c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* পরিসংখ্যান (Stats) সেকশন */
+.stats-section {
+    background: linear-gradient(rgba(0, 100, 0, 0.8), rgba(0, 100, 0, 0.8)), url('../images/banner.jpg');
+    /* আগের ব্যানার ইমেজ ব্যবহার করা হয়েছে */
+    background-size: cover;
+    background-attachment: fixed;
+    /* প্যারালাক্স এফেক্ট */
+    padding: 60px 0;
+    color: white;
+    text-align: center;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.stat-item i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.stat-item h2 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.stat-item p {
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+/* লোকেশন সেকশন */
+.location-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 50px auto;
+    align-items: center;
+}
+
+.location-text h2 {
+    color: #006400;
+    margin-bottom: 20px;
+}
+
+.location-text p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.location-text i {
+    color: #e74c3c;
+    width: 20px;
+}
+
+/* মোবাইল রেসপন্সিভ ফিক্স */
+@media (max-width: 768px) {
+    .location-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- Inner Page Styles --- */
+
+/* পেজ ব্যানার (হোমপেজের স্লাইডারের বদলে ছোট ব্যানার) */
+.page-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    text-align: center;
+    color: white;
+}
+
+.page-banner h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.page-banner p {
+    color: #ddd;
+}
+
+/* সাধারণ কন্টেন্ট এরিয়া */
+.content-section {
+    padding: 50px 0;
+    background: white;
+    min-height: 500px;
+    /* পেজ যেন খালি মনে না হয় */
+}
+
+/* টেবিল ডিজাইন (রুটিন, রেজাল্ট ও টিচার্স লিস্টের জন্য) */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #006400;
+    color: white;
+}
+
+.custom-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* ডাউনলোড বাটন */
+.btn-download {
+    background: #2980b9;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
